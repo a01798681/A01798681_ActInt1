@@ -60,7 +60,6 @@ tuple<size_t, size_t, string> longestCommonSubstring(const string& text1, const 
             }
         }
     }
-
     string substring = text1.substr(endIdx - maxLength + 1, maxLength);
     return {endIdx - maxLength + 2, endIdx + 1, substring}; 
 }
