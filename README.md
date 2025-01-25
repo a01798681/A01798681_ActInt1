@@ -30,7 +30,7 @@ El programa requiere archivos de entrada (`transmission1.txt`, `transmission2.tx
 Ejecuta el programa con:
 ```bash
 g++ integradora1.cpp -o main
-./main
+./main```
 
 ### 2. `int_funZ.cpp`
 Este archivo implementa el algoritmo de la función Z para encontrar todas las ocurrencias de un patrón en un texto.
