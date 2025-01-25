@@ -51,7 +51,7 @@ El programa tiene valores predeterminados (patron = "abc" y texto = "xabcyabc") 
 
 ## Contribuciones
 - **Andrés Cabrera Alvarado (A01798681):**
-- Implementación de la función `largo_palindromo` y análisis del palíndromo más largo en `integradora1.cpp`.
+  - Implementación de la función `largo_palindromo` y análisis del palíndromo más largo en `integradora1.cpp`.
   - Desarrollo de la lógica para verificar patrones en transmisiones (Parte 1).
   - Implementación de la lógica para interpretar los valores Z en `Int_funZ.cpp`.
 
