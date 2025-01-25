@@ -102,12 +102,12 @@ tuple<size_t, size_t, string> largo_substring(const string& text1, const string&
  * @return ejecución de las 3 partes.
  */
 int main(){
-    string transmission1 = read_file("transmission1.txt");
-    string transmission2 = read_file("transmission2.txt");
+    string transmission1 = read_file("A01798681_ActInt1/transmission1.txt");
+    string transmission2 = read_file("A01798681_ActInt1/transmission2.txt");
     vector<string> mcodeFiles = {
-        read_file("mcode1.txt"),
-        read_file("mcode2.txt"),
-        read_file("mcode3.txt")
+        read_file("A01798681_ActInt1/mcode1.txt"),
+        read_file("A01798681_ActInt1/mcode2.txt"),
+        read_file("A01798681_ActInt1/mcode3.txt")
     };
 
     //parte1: verifica que los códigos mcode estén en las transmisiones
@@ -126,7 +126,7 @@ int main(){
     cout << range1.first << " " << range1.second << " " << palindrome1 << endl;
     cout << range2.first << " " << range2.second << " " << palindrome2 << endl;
 
-    //parte3: posición inicial y final del substring comun más largo entre os archivos de transmisión
+    //parte3: posición inicial y final del substring comun más largo entre los archivos de transmisión
     cout << "Parte 3:" << endl;
     auto [startCommon, endCommon, commonSubstring] = largo_substring(transmission1, transmission2);
     cout << startCommon << " " << endCommon << " " << commonSubstring << endl;
