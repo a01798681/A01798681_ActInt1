@@ -7,11 +7,6 @@ Este proyecto incluye dos programas que analizan archivos de texto para realizar
 3. Encontrar la subcadena común más larga entre dos archivos.
 4. Implementar el algoritmo de la función Z para búsqueda eficiente de patrones.
 
-**Autores:**
-- Andrés Cabrera Alvarado - A01798681  
-- José Eduardo Rosas Poncio - A01784461  
-- Yael Octavio Pérez Méndez - A01799842  
-
 **Fecha de creación:** 21/01/2025
 
 ---
