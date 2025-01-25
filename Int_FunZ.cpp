@@ -6,7 +6,7 @@
 using namespace std;
 
 // Función que calcula la función Z para una cadena dada
-vector<int> calculateZFunction(const string& s) {
+vector<int> funcion_z(const string& s) {
     int n = s.length();
     vector<int> Z(n); // Vector para almacenar los valores Z
     int L = 0, R = 0; // Inicializamos los límites de la ventana [L, R]
@@ -32,6 +32,12 @@ vector<int> calculateZFunction(const string& s) {
     return Z; // Retornamos el vector Z con todos los valores
 }
 
+/*
+ * @brief verifica si un texto contiene un patrón específico.
+ * @param vector z de la string
+ * @param tamaño del patron a buscar
+ * @return par con un booleano que indica si se encontró el patrón y su posición.
+ */
 pair<string, int> parte1(vector<int>& Z, const int tam_patron) {
     for (int j = tam_patron + 1; j < Z.size(); ++j) {
         if (Z[j] == tam_patron) {
@@ -42,6 +48,11 @@ pair<string, int> parte1(vector<int>& Z, const int tam_patron) {
     return {": false", -1};
 }
 
+/*
+ * @brief encuentra el palíndromo más largo en un texto.
+ * @param texto que buscará el palíndromo.
+ * @return par con el rango del palíndromo y el texto del palíndromo.
+ */
 pair<pair<size_t, size_t>, string> largo_palindromo(const string& text){
     size_t n = text.size();
     size_t start = 0, maxLength = 1;
@@ -68,28 +79,32 @@ pair<pair<size_t, size_t>, string> largo_palindromo(const string& text){
     return {{start + 1, start + maxLength}, palindrome};
 }
 
+/*
+ * @brief encuentra la subcadena común más larga entre dos textos.
+ * @param primer texto.
+ * @param segundo texto.
+ * @return no retorna nada pero imprime la información de la posicion inicial, final y el patron en común
+ */
 void parte3(const string& s1, const string& s2) {
     int maxLen = 0;         // Longitud máxima del patrón común
     string bestPattern;     // El patrón más largo encontrado
-    int bestPosition = -1;  // Posición del patrón más largo en s2
 
     for (size_t start = 0; start < s1.size(); ++start) {
-        // Crear una subcadena dinámica que elimina los primeros `start` caracteres de s1
+        // Eliminamos los primeros indices conforme vamos recorriendo el arreglo para encontrar el patron
         string combined = s1.substr(start) + "$" + s2;
-        vector<int> z = calculateZFunction(combined);
+        vector<int> z = funcion_z(combined);
 
         // Recorrer la parte del vector Z correspondiente a s2 (después del separador $)
         for (size_t i = s1.size() - start + 1; i < combined.size(); ++i) {
             if (z[i] > maxLen) {
                 maxLen = z[i];
                 bestPattern = s1.substr(start, maxLen);
-                bestPosition = i - (s1.size() - start + 1); // Posición en s2
             }
         }
     }
     string cadena = bestPattern + "$" + s1;
-    vector<int> Z = calculateZFunction(cadena);
-    pair<string, int> posicion = parte1(Z, maxLen);
+    vector<int> Z = funcion_z(cadena); // Volvemos a calcular el vector z de la transmision1
+    pair<string, int> posicion = parte1(Z, maxLen); // encontramos la posición inicial  del patron
     cout << posicion.second << " " << posicion.second + maxLen - 1 << " " << bestPattern << endl;
 }
 
@@ -103,24 +118,27 @@ string read_file(const string& filename) {
     return string((istreambuf_iterator<char>(file)), istreambuf_iterator<char>());
 }
 
+/*
+ * @brief lee los archivos y ejecuta el análisis de las transmisiones.
+ * @return ejecución de las 3 partes.
+ */
 int main() {
     // Leer los archivos de las transmisiones y los patrones
-    string transmission1 = read_file("A01798681_ActInt1/transmission1.txt");
-    string transmission2 = read_file("A01798681_ActInt1/transmission2.txt");
+    string transmission1 = read_file("transmission1.txt");
+    string transmission2 = read_file("transmission2.txt");
     vector<string> mcodeFiles = {
-        read_file("A01798681_ActInt1/mcode1.txt"),
-        read_file("A01798681_ActInt1/mcode2.txt"),
-        read_file("A01798681_ActInt1/mcode3.txt")
+        read_file("mcode1.txt"),
+        read_file("mcode2.txt"),
+        read_file("mcode3.txt")
     };
 
-    // Procesamiento parte 1
     cout << "Parte 1" << endl;
     for (size_t i = 0; i < mcodeFiles.size(); ++i) {
         string concatenated1 = mcodeFiles[i] + "$" + transmission1;
         string concatenated2 = mcodeFiles[i] + "$" + transmission2;
 
-        vector<int> Z1 = calculateZFunction(concatenated1);
-        vector<int> Z2 = calculateZFunction(concatenated2);
+        vector<int> Z1 = funcion_z(concatenated1);
+        vector<int> Z2 = funcion_z(concatenated2);
 
         pair<string, int> res_t1 = parte1(Z1, mcodeFiles[i].length());
         cout << "Transmision 1 mcode " << (i + 1) << res_t1.first + " " + ((res_t1.second != -1) ? to_string(res_t1.second) : " ") << endl;
