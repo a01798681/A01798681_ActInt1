@@ -59,12 +59,12 @@ g++ Int_FunZ.cpp -o main
 
 ## Contribuciones
 - **Andrés Cabrera Alvarado (A01798681):**
-  - Implementación de las funciones `read_file` y `contiene` en `integradora1.cpp `.
+- Implementación de la función `largo_palindromo` y análisis del palíndromo más largo en `integradora1.cpp`.
   - Desarrollo de la lógica para verificar patrones en transmisiones (Parte 1).
   - Implementación de la lógica para interpretar los valores Z en `Int_funZ.cpp`.
 
 - **José Eduardo Rosas Poncio (A01784461):**
-  - Implementación de la función `largo_palindromo` y análisis del palíndromo más largo en `integradora1.cpp`.
+  - Implementación de las funciones `read_file` y `contiene` en `integradora1.cpp `.
   - Desarrollo de la lógica principal de la Parte 2 en `integradora1.cpp `.
   - Creación de la función `printVector` y pruebas del algoritmo Z en `Int_funZ.cpp`.
 
