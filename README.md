@@ -27,11 +27,6 @@ Este archivo realiza tres análisis principales:
 #### Uso:
 El programa requiere archivos de entrada (`transmission1.txt`, `transmission2.txt`, `mcode1.txt`, `mcode2.txt`, `mcode3.txt`) en el mismo directorio para ejecutar correctamente. 
 
-Ejecuta el programa con:
-```bash
-g++ integradora1.cpp -o main
-./main```
-
 ### 2. `int_funZ.cpp`
 Este archivo implementa el algoritmo de la función Z para encontrar todas las ocurrencias de un patrón en un texto.
 
@@ -51,3 +46,11 @@ El programa tiene valores predeterminados (patron = "abc" y texto = "xabcyabc") 
 - Andrés Cabrera Alvarado A01798681
 - José Eduardo Rosas Poncio A01784461
 - Yael Octavio Pérez Méndez A01799842
+
+Ejecuta el programa con:
+```bash
+g++ integradora1.cpp -o main
+./main
+
+g++ int_funZ.cpp -o main
+./main
