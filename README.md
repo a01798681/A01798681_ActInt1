@@ -47,14 +47,6 @@ El programa tiene valores predeterminados (patron = "abc" y texto = "xabcyabc") 
 - José Eduardo Rosas Poncio A01784461
 - Yael Octavio Pérez Méndez A01799842
 
-Ejecuta el programa con:
-```bash
-g++ integradora1.cpp -o main
-./main
-
-g++ Int_FunZ.cpp -o main
-./main
-
 ---
 
 ## Contribuciones
@@ -72,3 +64,11 @@ g++ Int_FunZ.cpp -o main
   - Implementación de la función `largo_substring` para identificar la subcadena común más larga en `integradora1.cpp`.
   - Desarrollo de la lógica principal de la Parte 3 en `integradora1.cpp`.
   - Implementación de la función `funcion_z` en `Int_funZ.cpp` y configuración inicial de las pruebas.
+
+Ejecuta el programa con:
+```bash
+g++ integradora1.cpp -o main
+./main
+
+g++ Int_FunZ.cpp -o main
+./main
