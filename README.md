@@ -34,5 +34,25 @@ El programa requiere archivos de entrada (`transmission1.txt`, `transmission2.tx
 
 Ejecuta el programa con:
 ```bash
-g++ Main.cpp -o main
+g++ integradora1.cpp -o main
 ./main
+
+### 2. `int_funZ.cpp`
+Este archivo implementa el algoritmo de la función Z para encontrar todas las ocurrencias de un patrón en un texto.
+
+### Funciones principales:
+- `funcion_z`: Calcula el vector Z para un texto concatenado (patrón + $ + texto).
+- `printVector`: Muestra el contenido de un vector.
+
+### Uso:
+El programa tiene valores predeterminados (patron = "abc" y texto = "xabcyabc") que pueden ser modificados directamente en el código y requiere los mismos archivos que el archivo 1
+
+##Requerimientos
+- Compilador C++ (compatible con C++11 o superior).
+
+- Archivos de texto en el mismo directorio que los ejecutables.
+
+##Autores
+- Andrés Cabrera Alvarado A01798681
+- José Eduardo Rosas Poncio A01784461
+- Yael Octavio Pérez Méndez A01799842
